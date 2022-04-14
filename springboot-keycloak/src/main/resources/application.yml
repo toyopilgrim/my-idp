@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    username: sa
+    url: jdbc:h2:./data/keycloak;DB_CLOSE_ON_EXIT=FALSE
+    hikari:
+      maximum-pool-size: 25
+      minimum-idle: 1
+
+keycloak:
+  custom:
+    server:
+      keycloak-path: "/auth"
+
+    adminUser:
+      username: admin
+      password: admin
+      create-admin-user-enabled: true
+
+    migration:
+      importProvider: singleFile
+      importLocation: realm-export.json
